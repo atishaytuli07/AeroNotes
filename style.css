@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    user-select: none;
+    background-color: #222438;
+    font-family: ui-sans-serif, system-ui, 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-image: repeating-linear-gradient(to right, transparent 0 50px, rgba(255, 255, 255, 0.067) 50px 51px), repeating-linear-gradient(to bottom, transparent 0 50px, rgba(255, 255, 255, 0.067) 50px 51px);
+    position: relative;
+}
+
+form {
+    background-color: #fff;
+    width: max-content;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 24px;
+    display: flex;
+    gap: 10px;
+}
+
+form input,
+form button {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    font-size: large;
+    cursor: pointer;
+}
+
+form button i {
+    font-size: 25px;
+    font-weight: 100;
+}
+
+form input::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+form input::-webkit-color-swatch {
+    border-radius: 50%;
+    border: none;
+}
+
+#list textarea {
+    all: unset;
+    color: #e4e3e3;
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+}
+
+#list .note {
+    background-color: #333;
+    width: max-content;
+    border-top: 30px solid #e6b905;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.27);
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    left: 50px;
+}
+
+#list .note .note-controls {
+    margin-right: 10px;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    display: flex;
+    gap: 10px;
+}
+
+#list .note .note-controls span {
+    margin-right: 2px;
+    height: 25px;
+    font-size: large;
+    cursor: pointer;
+}
+
+#list .note .close {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    height: 25px;
+    font-size: large;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 17px;
+    color: #fff;
+    font-size: 15px;
+}
+
+@media screen and (min-width: 300px) and (max-width: 900px) {
+    main {
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    form input,
+    form button {
+        width: 27px;
+        height: 27px;
+    }
+
+    #list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+        width: 100%;
+    }
+
+    #list .note {
+        position: relative;
+        margin: 20px auto;
+        width: 90%;
+        max-width: 300px;
+        left: 50%;
+        transform: translateX(-60%);
+    }
+
+    #list .note .note-controls {
+        top: -25px;
+        left: 5px;
+        color: #000000;
+        z-index: 1;
+        font-size: 20px;
+        font-weight: 100;
+    }
+
+    #list .note .close {
+        top: -25px;
+        right: 5px;
+        color: #000000;
+        z-index: 1;
+        font-size: 20px;
+        font-weight: 100;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
